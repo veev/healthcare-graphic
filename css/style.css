@@ -35,6 +35,14 @@
 	float: left;
 }
 
+.visible {
+	display: visible;
+}
+
+.hidden {
+	display: none;
+}
+
 .icon-desription {
 	margin-top: 25px;
 	min-height: 121px;
