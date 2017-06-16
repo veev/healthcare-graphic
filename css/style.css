@@ -1,0 +1,59 @@
+.centered {
+	text-align: center;
+}
+
+.row {
+	padding-bottom: 30px;
+}
+
+#seniors-covered {
+	background-image: url(../assets/seniors.png);
+}
+
+#women-covered {
+	background-image: url(../assets/women.png);
+}
+
+#young-covered {
+	background-image: url(../assets/youngpeople.png);
+}
+
+#preexisting-covered {
+	background-image: url(../assets/preexisting.png);
+}
+
+#sick-covered {
+	background-image: url(../assets/sickpeople.png);
+}
+
+.icon {
+	background-color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
+	min-height: 120px;
+	min-width: 60px;
+	float: left;
+}
+
+.icon-desription {
+	margin-top: 25px;
+	min-height: 121px;
+}
+
+.icon-description p {
+	margin-left: 55px;
+}
+
+.callout-description p {
+	font-size: 1.2rem;
+    color: white;
+    background-color: #d21f26;
+    padding: 10px 45px 10px 45px;
+}
+
+.crossed {
+	background-image: url(../assets/cross.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
