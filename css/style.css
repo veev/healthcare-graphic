@@ -3,36 +3,86 @@
 }
 
 .row {
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 #seniors-covered {
 	background-image: url(../assets/seniors.png);
 }
-
 #women-covered {
 	background-image: url(../assets/women.png);
 }
-
 #young-covered {
 	background-image: url(../assets/youngpeople.png);
 }
-
 #preexisting-covered {
 	background-image: url(../assets/preexisting.png);
 }
-
 #sick-covered {
-	background-image: url(../assets/sickpeople.png);
+/*	background-image: url(../assets/sickpeople.png);*/
+}
+#doctor-visits {
+/*	background-image: url(../assets/doctorvisits.png);
+*/}
+#hospital-visits {
+/*	background-image: url(../assets/hospitalvisits.png);*/
+}
+#prescription-drugs {
+/*	background-image: url(../assets/prescriptiondrugs.png);*/
+	height: 70px;
+}
+#pediatric-care {
+	/*background-image: url(../assets/pediatriccare.png);*/
+}
+#mental-health {
+/*	background-image: url(../assets/mentalhealth.png);*/
+}
+#maternity-care {
+/*	background-image: url(../assets/maternitycare.png);*/
+}
+#contraceptives {
+/*	background-image: url(../assets/contraception.png);*/
+}
+#well-woman-visits {
+	/*background-image: url(../assets/wellwomanvisits.png);*/
+}
+.money {
+	/*background-image: url(../assets/money.png);*/
 }
 
-.icon {
+/*#aca-what {
+	position: relative;
+}*/
+
+#who-covered .icon {
 	background-color: transparent;
 	background-size: contain;
 	background-repeat: no-repeat;
 	min-height: 120px;
 	min-width: 60px;
 	float: left;
+}
+
+#who-covered .icon img {
+	height: 125px;
+    position: absolute;
+}
+
+#what-covered .icon {
+	background-color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
+	min-height: 100px;
+	min-width: 60px;
+}
+
+#what-covered .icon img {
+	height: 100px;
+}
+
+#what-covered .columns {
+	text-align: center;
+	position: relative;
 }
 
 .visible {
@@ -43,12 +93,18 @@
 	display: none;
 }
 
-.icon-desription {
+#what-covered .icon-description {
+/*	position: absolute;
+	margin-top: 100px;*/
+	font-size: 1rem;
+}
+
+#who-covered .icon-description {
 	margin-top: 25px;
 	min-height: 121px;
 }
 
-.icon-description p {
+#who-covered .icon-description p {
 	margin-left: 55px;
 }
 
@@ -57,11 +113,31 @@
     color: white;
     background-color: #d21f26;
     padding: 10px 45px 10px 45px;
+    position: absolute;
+    top: 310px;
 }
 
-.crossed {
+#who-covered .crossed {
 	background-image: url(../assets/cross.png);
-	background-repeat:no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    margin-left: 70px;
+    position: absolute;
+    z-index: 100;
+}
+
+#what-covered .crossed {
+	background-image: url(../assets/cross.png);
+	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+  	margin-left: -50px;
+	position: absolute;
+	z-index: 100;
 }

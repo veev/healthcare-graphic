@@ -33,102 +33,202 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="container">
+  <div id="who-covered">
+    <div class="row">
+      <div class="twelve columns">
+        <h4 class="centered">Who is Covered and How</h4>
+        <h6 class="centered">By all insurance plans</h6>
+      </div>
+    </div>
+    <div id="aca-who" class="visible">
+      <div class="row">
+        <div class="four columns">
+          <div class="icon" id="seniors-covered"></div>
+          <div class="icon-description">
+            <p><b>Seniors</b><br>Cannot be charged more than 5X as much as a young person</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="icon" id="women-covered">
+            <div class="crossed hidden"></div><img src="../assets/women.png" />
+          </div>
+          <div class="icon-description">
+            <p><b>Women</b><br>Cannot be charged more than men for the same plan</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="icon" id="young-covered"></div>
+          <div class="icon-description">
+            <p><b>Young People</b><br>Under 26 years old can stay on their parents' plan</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="four columns">
+          <div class="icon" id="preexisting-covered">
+            <div class="crossed hidden"></div><img src="../assets/preexisting.png" />
+          </div>
+          <div class="icon-description">
+            <p><b>People with pre-existing conditions</b><br>Cannot be charged more for the same plan</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="icon" id="sick-covered">
+            <div class="crossed hidden"></div><img src="../assets/sickpeople.png" />
+          </div>
+          <div class="icon-description">
+            <p><b>Sick people</b><br>Cannot be charged more than healthy people for the same plan</p>
+          </div>
+        </div>
+        <div class="four columns offset-by-eight">
+          <div class="callout-description visible" id="aca-callout">
+            <p><b>Under ACA</b><br>States must require these health insurance protections</p>
+          </div>
+          <div class="callout-description hidden" id="ahca-callout">
+            <p><b>Under AHCA</b><br>States would be allowed to scale back these protections completely. (via waver request)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--     <div id="ahca-who" class="hidden">
+      <div class="row">
+        <div class="four columns">
+          <div class="icon" id="seniors-covered"></div>
+          <div class="icon-description">
+            <p><b>Seniors</b><br>Cannot be charged more than 5X as much as a young person</p>
+          </div>
+        </div>
+        <div class="four columns crossed">
+          <div class="icon" id="women-covered"></div>
+          <div class="icon-description">
+            <p><b>Women</b><br>Cannot be charged more than men for the same plan</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="icon" id="young-covered"></div>
+          <div class="icon-description">
+            <p><b>Young People</b><br>Under 26 years old can stay on their parents' plan</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="four columns crossed">
+          <div class="icon" id="preexisting-covered"></div>
+          <div class="icon-description">
+            <p><b>People with pre-existing conditions</b><br>Cannot be charged more for the same plan</p>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="icon" id="sick-covered">
+            <div class="crossed visible"><img src="../assets/sickpeople.png" /></div>
+            <div class="icon-description">
+              <p><b>Sick people</b><br>Cannot be charged more than healthy people for the same plan</p>
+            </div>
+          </div>
+        </div>
+        <div class="four columns">
+          <div class="callout-description offset-by-eight">
+            <p><b>Under AHCA</b><br>States would be allowed to scale back these protections completely. (via waver request)</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
   <div class="row">
-    <div class="twelve columns">
-      <h2 class="centered">Who is Covered and How</h2>
-      <h4 class="centered">By all insurance plans</h4>
-    </div>
-  </div>
-  <div id="aca" class="visible">
-    <div class="row">
-      <div class="four columns">
-        <div class="icon" id="seniors-covered"></div>
-        <div class="icon-description">
-          <p><b>Seniors</b><br>Cannot be charged more than 5X as much as a young person</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="icon" id="women-covered"></div>
-        <div class="icon-description">
-          <p><b>Women</b><br>Cannot be charged more than men for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="icon" id="young-covered"></div>
-        <div class="icon-description">
-          <p><b>Young People</b><br>Under 26 years old can stay on their parents' plan</p>
-        </div>
+      <div class="twelve columns centered">
+        <input class="button" type="submit" value="ACA">
+        <input class="button" type="button" value="AHCA">
+        <input class="button" type="button" value="Senate">
       </div>
     </div>
-    <div class="row">
-      <div class="four columns">
-        <div class="icon" id="preexisting-covered"></div>
-        <div class="icon-description">
-          <p><b>People with pre-existing conditions</b><br>Cannot be charged more for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="icon" id="sick-covered"></div>
-        <div class="icon-description">
-          <p><b>Sick people</b><br>Cannot be charged more than healthy people for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="callout-description">
-          <p><b>Under ACA</b><br>States must require these health insurance protections</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="ahca" class="hidden">
-    <div class="row">
-      <div class="four columns">
-        <div class="icon" id="seniors-covered"></div>
-        <div class="icon-description">
-          <p><b>Seniors</b><br>Cannot be charged more than 5X as much as a young person</p>
-        </div>
-      </div>
-      <div class="four columns crossed">
-        <div class="icon" id="women-covered"></div>
-        <div class="icon-description">
-          <p><b>Women</b><br>Cannot be charged more than men for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="icon" id="young-covered"></div>
-        <div class="icon-description">
-          <p><b>Young People</b><br>Under 26 years old can stay on their parents' plan</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns crossed">
-        <div class="icon" id="preexisting-covered"></div>
-        <div class="icon-description">
-          <p><b>People with pre-existing conditions</b><br>Cannot be charged more for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns crossed">
-        <div class="icon" id="sick-covered"></div>
-        <div class="icon-description">
-          <p><b>Sick people</b><br>Cannot be charged more than healthy people for the same plan</p>
-        </div>
-      </div>
-      <div class="four columns">
-        <div class="callout-description">
-          <p><b>Under AHCA</b><br>States would be allowed to scale back these protections completely.(via waver request)</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="twelve columns centered">
-    <input class="button" type="submit" value="ACA">
-    <input class="button" type="button" value="AHCA">
-    <input class="button" type="button" value="Senate">
-    </div>
-  </div>
   <hr>
+  <div id="what-covered">
+    <div class="row">
+      <div class="twelve columns">
+        <h4 class="centered">What is Covered</h4>
+        <h6 class="centered">Basic services required to be covered by all insurance plans</h6>
+      </div>
+    </div>
+    <div id="aca-what" class="visible">
+      <div class="row">
+        <div class="two columns offset-by-two">
+          <div class="icon" id="doctor-visits"><div class="crossed hidden"></div><img src="../assets/doctorvisits.png" /></div>
+          <div class="icon-description">
+            <p><b>Doctor visits</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="hospital-visits"><div class="crossed hidden"></div><img src="../assets/hospitalvisits.png" /></div>
+          <div class="icon-description">
+            <p><b>Hospital visits</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="prescription-drugs"><div class="crossed hidden"></div><img src="../assets/prescriptiondrugs.png" /></div>
+          <div class="icon-description">
+            <p><b>Prescription drugs</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="pediatric-care"><div class="crossed hidden"></div><img src="../assets/pediatriccare.png" /></div>
+          <div class="icon-description">
+            <p><b>Pediatric care</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="two columns offset-by-two">
+          <div class="icon" id="mental-health"><div class="crossed hidden"></div><img src="../assets/mentalhealth.png" /></div>
+          <div class="icon-description">
+            <p><b>Mental health</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="maternity-care"><div class="crossed hidden"></div><img src="../assets/maternitycare.png" /></div>
+          <div class="icon-description">
+            <p><b>Maternity care and breastfeeding support</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="contraceptives"><div class="crossed hidden"></div><img src="../assets/contraception.png" /></div>
+          <div class="icon-description">
+            <p><b>Contraceptives</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon" id="well-woman-visits"><div class="crossed hidden"></div><img src="../assets/wellwomanvisits.png" /></div>
+          <div class="icon-description">
+            <p><b>"Well-woman" visits</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <h7 class="centered">Other requirements</h7>
+        </div>
+      </div>
+      <div class="row">
+        <div class="two columns offset-by-four">
+          <div class="icon money"><div class="crossed hidden"></div><img src="../assets/money.png" /></div>
+          <div class="icon-description">
+            <p><b>Monthly fee-cap</b></p>
+          </div>
+        </div>
+        <div class="two columns">
+          <div class="icon money"><div class="crossed hidden"></div><img src="../assets/money.png" /></div>
+          <div class="icon-description">
+            <p><b>No lifetime limits to coverage</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns centered">
+          <input class="button" type="submit" value="ACA">
+          <input class="button" type="button" value="AHCA">
+          <input class="button" type="button" value="Senate">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- End Document
