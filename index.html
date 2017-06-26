@@ -135,12 +135,12 @@
     </div> -->
   </div>
   <div class="row">
-      <div class="twelve columns centered">
-        <input class="button" type="submit" value="ACA">
-        <input class="button" type="button" value="AHCA">
-        <input class="button" type="button" value="Senate">
-      </div>
+    <div class="twelve columns centered">
+      <input class="button" type="submit" value="ACA">
+      <input class="button" type="button" value="AHCA">
+      <input class="button" type="button" value="Senate">
     </div>
+  </div>
   <hr>
   <div id="what-covered">
     <div class="row">
@@ -227,6 +227,28 @@
           <input class="button" type="button" value="Senate">
         </div>
       </div>
+      <hr>
+    </div>
+  </div>
+  <div id="funding-and-spending">
+    <div class="row">
+      <div class="twelve columns">
+        <h4 class="centered">Funding and spending</h4>
+        <h7 class="centered">Spending on health care</h7><br>
+        <h7 class="centered">by US Gov't over 10 years</h7>
+      </div>
+    </div>
+    <div class="row">
+      <div class="eight columns offset-by-two" id="spendingGraph"></div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <h7 class="centered">Taxes and other revenue</h7><br>
+        <h7 class="centered">over 10 years</h7>
+      </div>
+    </div>
+    <div class="row">
+      <div id="fundingGraph"></div>
     </div>
   </div>
 </div>
@@ -234,6 +256,7 @@
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
+<script type='text/javascript' src='js/vendor/d3.v4.js'></script>
 <script type='text/javascript' src='js/main.js'></script>
 </body>
 </html>

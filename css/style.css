@@ -141,3 +141,43 @@
 	position: absolute;
 	z-index: 100;
 }
+
+.button .active {
+	background: #4ba5bc;
+	color: white;
+}
+
+/* D3 Stuff */
+.grid line {
+  stroke: #c4c6c8;
+  stroke-opacity: 1.0;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.tick line {
+	opacity: 1;
+}
+
+.bar:hover {
+	color: #007485;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+#spendingGraph {
+	height: 450px;
+}
