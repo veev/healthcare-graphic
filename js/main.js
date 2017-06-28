@@ -16,15 +16,15 @@ if (
 
 let addListeners = function() {
 	let elements = document.getElementsByClassName("button");
-	console.log(elements);
+	//console.log(elements);
 
 	let acaButton = document.getElementsByClassName("button")[0];
-	console.log(acaButton);
+	//console.log(acaButton);
 
 	let acaContent = document.getElementById('aca-who');
 
 	let ahcaButton = document.getElementsByClassName('button')[1];
-	console.log(ahcaButton);
+	//console.log(ahcaButton);
 
 	let ahcaWhatButton = document.getElementsByClassName('button')[4];
 	let acaWhatContent = document.getElementById('aca-what');
@@ -33,21 +33,17 @@ let addListeners = function() {
 
 	ahcaButton.addEventListener('click', function(e) {
 		e.preventDefault();
-		console.log(e);
+		//console.log(e);
 		console.log('pressed AHCA button');
 		let elements = acaContent.getElementsByClassName('crossed');
 		for (let i=0; i < elements.length; i++) {
 			let element = elements[i];
 			element.onclick = turnOnCross(element);
 		}
-		console.log(acaContent);
+		//console.log(acaContent);
 		let ahcaCallout = document.getElementById('ahca-callout');
 		ahcaCallout.onclick = toggleCallout(ahcaCallout, true);
-		if(document.getElementByTarget(e.target.value).hasClass('active')){
-        	this.removeClass('active')
-		} else {
-	        this.addClass('active');
-	    }
+
 		// ahcaCallout.classList.add('visible');
 		// ahcaCallout.classList.remove('hidden');
 		// ahcaContent.classList.add('visible');
@@ -59,13 +55,13 @@ let addListeners = function() {
 
 	acaButton.addEventListener('click', function(e) {
 		e.preventDefault();
-		console.log('pressed ACA button');
+		//console.log('pressed ACA button');
 		let elements = acaContent.getElementsByClassName('crossed');
 		for (let i=0; i < elements.length; i++) {
 			let element = elements[i];
 			element.onclick = turnOffCross(element);
 		}
-		console.log('acaContent', acaContent);
+		//console.log('acaContent', acaContent);
 		let ahcaCallout = document.getElementById('ahca-callout');
 		ahcaCallout.onclick = toggleCallout(ahcaCallout, false);
 		// acaCallout.classList.add('visible');
@@ -101,22 +97,22 @@ let addListeners = function() {
 	});
 
 	let turnOnCross = function(element) {
-		console.log('turn on cross');
-		console.log(element);
+		// console.log('turn on cross');
+		// console.log(element);
 		element.classList.add('visible');
 		element.classList.remove('hidden');
 	}
 
 	let turnOffCross = function(element) {
-		console.log('turn off cross');
-		console.log(element);
+		// console.log('turn off cross');
+		// console.log(element);
 		element.classList.add('hidden');
 		element.classList.remove('visible');
 	}
 
 	let toggleCallout = function(element, aca) {
-		console.log('toggle callout', aca);
-		console.log(element);
+		// console.log('toggle callout', aca);
+		// console.log(element);
 		if (aca) {
 			element.classList.add('visible');
 			element.classList.remove('hidden');
@@ -128,8 +124,8 @@ let addListeners = function() {
 	}
 
 	let toggleCrossClass = function(element) {
-		console.log('toggle cross');
-		console.log(element);
+		// console.log('toggle cross');
+		// console.log(element);
 		if (element.classList.contains('hidden')) {
 			element.classList.add('visible');
     		element.classList.remove('hidden');
@@ -155,7 +151,7 @@ let addListeners = function() {
 
 	//Draw Stack Chart
 	let svg = d3.select("#spendingGraph");
-	console.log(svg.node().getBoundingClientRect().width);
+	//console.log(svg.node().getBoundingClientRect().width);
     let marginStackChart = { top: 20, right: 20, bottom: 30, left: 40 },
             widthStackChart = +svg.node().getBoundingClientRect().width - marginStackChart.left - marginStackChart.right,
             heightStackChart =  +svg.node().getBoundingClientRect().height - marginStackChart.top - marginStackChart.bottom;
@@ -300,7 +296,7 @@ let addListeners = function() {
     	data.forEach(function (d) {
             let y0 = 0;
             d.amounts = colorStackChart.domain().map(function (type) { 
-            	console.log(d[type].amount);
+            	//console.log(d[type].amount);
             	return { 
             		type: type,
             		bill: d.bill,
@@ -310,7 +306,7 @@ let addListeners = function() {
             		title: d[type].descriptionTitle
             	}; 
             });
-            console.log(d);
+            //console.log(d);
             d.total = d.amounts[d.amounts.length - 1].y1;
         });
 
@@ -322,9 +318,6 @@ let addListeners = function() {
         yStackChart.domain([0, d3.max(data, function(d) { 
         	return d.total; 
         })]);
-        //yStackChart.domain([0, 2000000000000]);
-
-        console.log(yStackChart.domain);
 
         canvasStackChart.append('g')
         	.attr('class', 'x axis')
@@ -379,17 +372,28 @@ let addListeners = function() {
         	})
         	.style('fill', function(d) { return colorStackChart(d.type); })
         	.on('mouseover', function(d) {
-        		console.log(d);
+        		let barArea = d3.select(this)
+            	.style("fill", "#007485");
+        		//console.log(d);
         		if (d.title != undefined) {
         			tooltip.html("<strong>" + d.title + "</strong><br><div>" + d.description + "</div>");
-					tooltip.style("visibility", "visible")
-						   .style('left', xStackChart(d.bill) +
-						   	document.getElementById("spendingGraph").offsetLeft + 'px')
-						   .style('top', (parseInt(d3.select(this).attr('y')) +
+					tooltip.style("visibility", "visible");
+					if(d.bill === 'aca') {
+						tooltip.style('left', xStackChart('aca') - (parseInt(d3.select(this).attr('width')) / 2) +
+						   	document.getElementById("spendingGraph").offsetLeft + 'px');
+						console.log(xStackChart('aca'), d3.select(this).attr('y'));
+					} else if (d.bill === 'ahca') {
+						tooltip.style('left', xStackChart('ahca') + parseInt(d3.select(this).attr('width') * 2) + parseInt(d3.selectAll('.tooltip').node().getBoundingClientRect().width) +
+						   	document.getElementById("spendingGraph").offsetLeft + 'px');
+						console.log(xStackChart('ahca'), d3.select(this).attr('y'));
+					}
+						tooltip.style('top', (parseInt(d3.select(this).attr('y')) +
 						   	document.getElementById("spendingGraph").offsetTop) + 'px');
 
-					console.log(xStackChart(d.bill), d3.select(this).attr('y'));
-					console.log(canvasStackChart);
+					console.log(d3.selectAll('.tooltip').node().getBoundingClientRect());
+					console.log((parseInt(d3.select(this).attr('y')) +
+						   	document.getElementById("spendingGraph").offsetTop) + 'px');
+					console.log("height", d3.select(this).attr('height'));
 					console.log(document.getElementById("spendingGraph").offsetTop);
 
         		}
@@ -400,27 +404,7 @@ let addListeners = function() {
 		    })
 		    .on('mousemove', function(d) {
 		    	//console.log(d);
-		    	let barArea = d3.select(this)
-            	.style("fill", "#007485");
-            	//console.log(barArea);
-            	//console.log(barArea.node().getBoundingClientRect());
-            	let bbox = barArea.node().getBoundingClientRect();
-            	let xPosition = bbox.left / 2;
-            	let yPosition = bbox.top + (bbox.height / 2);
-            	// let barNode = barArea.node().parentNode;
-            	// console.log(barNode.getBoundingClientRect());
-		    	// let xPosition = d3.mouse(this)[0];
-		    	// let yPosition = d3.mouse(this)[1];
-		    	//console.log(xPosition, yPosition);
-		    	//console.log(d3.event.pageX, d3.event.pageY);
-		    	//console.log(this.getScreenCTM());
-				// tooltip.attr('transform', 'translate(' + xPosition + ',' + yPosition + ')');
-				// tooltip.select('text').text('test');
-				// return tooltip.style("top",(d3.event.pageY - 10) + "px")
-				// 			  .style("left", (d3.event.pageX + 10) + "px");
-				// return tooltip.style('top', yPosition + 'px')
-				// 			  .style('left', xPosition + 'px');
-
+		    	
     	});
 
 		let rectBar = d3.select('.g');
