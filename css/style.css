@@ -147,6 +147,14 @@
 	color: white;
 }
 
+#funding-and-spending img {
+	width: 100%;
+}
+
+#uninsured img {
+	width: 100%;
+}
+
 /* D3 Stuff */
 .grid line {
   stroke: #c4c6c8;

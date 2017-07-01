@@ -2,7 +2,6 @@ let callback = function(){
   // Handler when the DOM is fully loaded
   console.log('document loaded');
   addListeners();
-  drawStackChart();
 };
 
 if (
